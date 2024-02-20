@@ -1,5 +1,5 @@
 name:                hs-pict-lang
-version:             0.9.0
+version:             0.10.0
 github:              nobsun/hs-pict-lang
 license:             BSD3
 author:              Nobuo Yamashita
@@ -58,7 +58,7 @@ library:
   source-dirs: src
 
 executables:
-  square-limit:
+  hs-pict-lang:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
