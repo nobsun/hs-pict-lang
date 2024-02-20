@@ -1,3 +1,3 @@
 # hs-pict-lang
 
-A Haskell implementation for Picture Language in SICP
+An implementation with Haskell for SICP's pincture language
