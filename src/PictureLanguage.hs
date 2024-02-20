@@ -15,6 +15,8 @@ module PictureLanguage
     , module Render
     , module Combinator
     , module SquareLimit
+    , squareLimitWave
+    , squareLimitTriangle
     ) where
 
 import Painter
@@ -23,4 +25,14 @@ import Frame
 import Render
 import Combinator
 import SquareLimit
+import Painter.Wave
+import Painter.Triangle
 
+squareLimitWave :: Painter
+squareLimitWave
+    = squareLimit0 4 wave
+
+squareLimitTriangle :: Painter
+squareLimitTriangle
+    = squareLimit 3 crossRBRB crossRBRW crossBRBW
+                    crossRBBW crossRBWW crossWBRR crossWBRW

@@ -9,12 +9,17 @@
 {-# LANGUAGE OverloadedRecordDot, NoFieldSelectors, DuplicateRecordFields #-}
 module Main where
 
+import System.Environment
+
 import PictureLanguage
-import Painter.Wave
 
 main :: IO ()
 main = do 
     { let ?setting = defaultSetting
-    ; render (squareLimit0 4 wave)
+    ; args <- getArgs
+    ; render $ case args of
+        "triangle":_ -> squareLimitTriangle
+        _            -> squareLimitWave
+
     }
 
