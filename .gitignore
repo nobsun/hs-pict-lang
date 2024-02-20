@@ -1,0 +1,8 @@
+.stack-work/
+dist-new/
+hs-pict-lang.cabal
+*.log
+core
+*.hi
+*.o
+*~

@@ -1,0 +1,6 @@
+:set prompt ">>> "
+import Text.Show.Unicode
+:set -interactive-print=uprint
+:set -XGHC2021 -XImplicitParams -XLambdaCase -XMultiWayIf -XNPlusKPatterns -XOverloadedStrings -XLexicalNegation
+:set -XDataKinds -XPolyKinds -XNoStarIsType -XTypeFamilyDependencies -XUndecidableInstances
+:set -XImplicitParams -XNoFieldSelectors -XDuplicateRecordFields -XOverloadedRecordDot
