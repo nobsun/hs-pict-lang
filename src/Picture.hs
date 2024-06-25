@@ -17,6 +17,7 @@ module Picture
     , fromTransformer
     ) where
 
+import Control.Arrow
 import Data.Bool
 import GHC.Float
 

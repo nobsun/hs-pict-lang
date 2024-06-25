@@ -19,7 +19,7 @@ main = do
     ; args <- getArgs
     ; render $ case args of
         "triangle":_ -> squareLimitTriangle
-        _            -> squareLimitWave
-
+        "wave":_     -> squareLimitWave
+        _            -> fish'
     }
 

@@ -17,6 +17,7 @@ module PictureLanguage
     , module SquareLimit
     , squareLimitWave
     , squareLimitTriangle
+    , fish, fish'
     ) where
 
 import Painter
@@ -27,7 +28,11 @@ import Combinator
 import SquareLimit
 import Painter.Wave
 import Painter.Triangle
+import Painter.Fish
 
+{- |
+Sample Painters
+-}
 squareLimitWave :: Painter
 squareLimitWave
     = squareLimit0 4 wave

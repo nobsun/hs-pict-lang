@@ -35,3 +35,4 @@ toPainter p f = map (first (f :)) p
 transformPainter :: Pos -> Pos -> Pos -> Painter -> Painter
 transformPainter o c0 c1 p f
     = map (first ((f :) . (head (transformer o c0 c1) :))) (p unitFrame)
+

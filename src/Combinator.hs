@@ -15,6 +15,7 @@ module Combinator
     , rotR
     , rotPi
     , rotSqrt2
+    , rotSqrt2'
     , beside
     , above
     , (<->)
@@ -62,6 +63,12 @@ rotPi = flipH . flipV
 -}
 rotSqrt2 :: Painter -> Painter
 rotSqrt2 = transformPainter (0.5,0.5) (1,1) (0,1)
+
+{- |
+右下中心に45度回転1/√2スケール
+-}
+rotSqrt2' :: Painter -> Painter
+rotSqrt2' = transformPainter (0.5,0.5) (1,0) (1,1)
 
 {- |
 横並び一般

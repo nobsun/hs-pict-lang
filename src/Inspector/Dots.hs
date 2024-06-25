@@ -1,4 +1,4 @@
--- # Painter.Grid グリッド
+-- # Inspector.Grid グリッド
 {-# LANGUAGE GHC2021 #-}
 {-# LANGUAGE ImplicitParams #-}
 {-# LANGUAGE ImportQualifiedPost #-}
@@ -8,27 +8,23 @@
 {-# LANGUAGE DataKinds, PolyKinds, NoStarIsType, TypeFamilyDependencies #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE OverloadedRecordDot, NoFieldSelectors, DuplicateRecordFields #-}
-module Painter.Grid
-    ( grid
+module Inspector.Dots
+    ( dots
     ) where
 
+import GHC.Float
 import Graphics.Gloss qualified as G
 import Painter
 import Picture
-
+import Frame
+import Inspector.Path
 {- | 
-グリッド
+ドット
 -}
-grid :: Int -> Int -> Painter
-grid r c
-    = toPainter $ toPicture s s 
-    $ G.color (G.makeColor 0.5 0.5 0.5 0.3)
-    $ G.pictures
-    $ [G.line [(0,j'), (w,j')] | j <- [0 .. r], let j' = fromIntegral j]
-      ++ 
-      [G.line [(i',0), (i',h)] | i <- [0 .. c], let i' = fromIntegral i]
-    where
-        h = fromIntegral r
-        w = fromIntegral c
-        s = fromIntegral $ max r c
+dot :: Float -> G.Vector -> G.Picture
+dot s (x,y) = G.translate x y (G.circleSolid (s / 200))
 
+dots :: Float -> Painter -> Painter
+dots s = (<>) <*> toPainter . toPicture s' s' . G.pictures . map (dot s) . path s
+    where
+        s' = float2Double s
